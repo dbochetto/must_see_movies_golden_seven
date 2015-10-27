@@ -1,0 +1,23 @@
+<h1> Director Details </h1>
+
+<img src = "<%= @director.image_url %>" width = "480"> 
+
+<table>
+	<tr>
+		<td> Name </td>
+		<td> <%= @director.name %> </td>
+	</tr>
+	<tr>
+		<td> Biography </td>
+		<td> <%= @director.bio %> </td>
+	</tr>
+	<tr>
+		<td> Date of Birth </td>
+		<td> <%= @director.dob %> </td>
+	</tr>
+</table>
+
+
+<a href="http://localhost:3000/directors"> Back </a>
+<a href="http://localhost:3000/directors/edit/<%= @director.id %>"> Edit </a>
+<a href="http://localhost:3000/directors/delete_director/<%= @director.id %>"> Delete </a>

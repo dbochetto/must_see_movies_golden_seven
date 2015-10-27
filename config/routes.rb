@@ -1,56 +1,36 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+#Where server will initially take user
+ get("/", { :controller => "movies", :action => "index" })
+ 
+ #Routes for Movies:
+ #Routes to create new movies:
+ get("/movies/new", { :controller => "movies", :action => "new_form" })
+ get("/movies/create_movie", { :controller => "movies", :action => "new_movie" })
+ #Routes to read movies:
+ get("/movies", { :controller => "movies", :action => "index"})
+ get("/movies/:id", { :controller => "movies", :action => "show"})
+ #Routes to edit movies:
+ get("/movies/edit/:id", { :controller => "movies", :action => "edit_form"})
+ get("/movies/update_movie/:id", { :controller => "movies", :action => "update_movie"})
+ #Routes to delete movies:
+ get("/movies/delete_movie/:id", { :controller => "movies", :action => "destroy"})
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+ #Routes for Directors
+ #Routes to create new directors:
+ get("/directors/new", { :controller => "directors", :action => "new_form"})
+ get("/directors/create_director", { :controller => "directors", :action => "new_director"})
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+ #Routes to read directors:
+ get("/directors", { :controller => "directors", :action => "index"})
+ get("/directors/:id", { :controller => "directors", :action => "show"})
+ #Routes to edit directors:
+ get("/directors/edit/:id", { :controller => "directors", :action => "edit_form"})
+ get("/directors/update_director/:id", { :controller => "directors", :action => "update_director"})
+ #Routes to delete directors:
+ get("/directors/delete_director/:id", { :controller => "directors", :action => "destroy"})
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+#Routes to read actors:
+ get("/actors", { :controller => "actors", :action => "index"})
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
