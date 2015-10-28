@@ -1,0 +1,21 @@
+<h1> Actor Details </h1>
+
+<img src="<%= @actor.image_url %>" >
+
+<table>
+	<tr>
+		<th> Name </th>
+		<th> Biography </th>
+		<th> Date of Birth </th>
+	</tr>
+	<tr>
+		<td> <%= @actor.name %> </td>
+		<td> <%= @actor.bio %> </td>
+		<td> <%= @actor.dob %> </td>
+	</tr>
+</table>
+
+<a href="http://localhost:3000/actors"> Back </a>
+<a href="http://localhost:3000/actors/edit/<%= @actor.id %>" > Edit </a>
+<a href="http://localhost:3000/actors/delete_actor/<%= @actor.id %>" > Delete </a>
+
